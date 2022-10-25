@@ -1,0 +1,15 @@
+
+    $ wget https://bitbucket.org/mpi4py/mpi4py/downloads/mpi4py-3.0.3.tar.gz
+    $ tar -zxf mpi4py-3.0.3.tar.gz
+    $ cd mpi4py-3.0.3
+    $ sudo apt install python-dev
+    $ python setup.py build
+    $ sudo python setup.py install
+    $ cd ~
+    $ nano .bashrc
+    Adicione esta linha no final do arquivo:
+    export PYTHONPATH=/home/pi/mpi4py-3.0.3
+
+Por fim, teste:
+
+$ mpiexec -n 1 python /home/pi/mpi4py-3.0.3/demo/helloworld.py

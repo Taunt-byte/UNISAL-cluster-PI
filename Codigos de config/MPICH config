@@ -1,0 +1,26 @@
+
+    $ cd ~
+    $ mkdir mpich2
+    $ cd mpich2
+    $ wget https://www.mpich.org/static/downloads/3.4.1/mpich-3.4.1.tar.gz
+
+    Não baixe as versões com a b c d no nome.
+    $ tar xfz mpich-3.4.1.tar.gz
+    $ sudo mkdir /home/rpimpi/
+    $ sudo mkdir /home/rpimpi/mpi-install
+    $ sudo mkdir /home/pi/mpi-build
+    $ sudo apt install gfortran
+    $ sudo /home/pi/mpich2/mpich-3.4.1/configure  -prefix=/home/rpimpi/mpi-install
+    Esse comando vai pré-configurar o MPICH.
+Demora! 
+    $ sudo make
+    Essa é a compilação do MPICH. 
+Raspberry Pi 3B 1.4Ghz demorou 2:30h aprox.
+    $ sudo make install
+    $ cd ..
+    $ nano .bashrc
+    Adicione esta linha no final do arquivo:
+    PATH=$PATH:/home/rpimpi/mpi-install/bin
+    Salve com CTRL+O, ENTER, feche com CTRL+X
+    $ sudo reboot
+
